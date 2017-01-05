@@ -1,2 +1,2 @@
 # project-socketio-jsonrpc
-smallproject written with socket.io and jsonrpc
+small project written with socket.io and jsonrpc
