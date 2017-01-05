@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://jobsandbox.greatcare.pl:8056/socket.io/socket.io.js"></script>
+    <script src="/scripts/add.js"></script>
+    <link href="/styles/style.min.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div id="top">
+        <ul>
+            <li><a href="/">Lista Kontrahentów</a></li>
+            <li><a href="/add.html">Dodaj Nowego Kontrahenta</a></li>
+        </ul>
+    </div><div id="main">
+        <form id="addCustomer">
+            <div><label for="name">Name:</label><input id="name" type="text"></div>
+            <div><label for="country">Country:</label><input id="country" type="text"></div>
+            <div><label for="state">State:</label><input id="state" type="text"></div>
+            <div><label for="city">City:</label><input id="city" type="text"></div>
+            <div><label for="streetAddress">Street Address:</label><input id="streetAddress" type="text"></div>
+            <div><label for="landlinePhoneNumber">Phone Number:</label><input id="landlinePhoneNumber" type="text"></div>
+            <div><label for="annotation">Annotation:</label><input id="annotation" type="text"></div>
+            <div><label for="VATCountry">VAT Country:</label><input id="VATCountry" type="text"></div>
+            <div><label for="VATID">Vat ID:</label><input id="VATID" type="text"></div>
+            <input type="submit" class="submit">
+        </form>
+    </div>
+</body>
+</html>
