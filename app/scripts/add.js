@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     var dataList = (function() {
-        var socket = io.connect('http://jobsandbox.greatcare.pl:8056?sessionID=sesja1');
+        var socket = io.connect("http://jobsandbox.greatcare.pl:8056?sessionID=sesja1");
 
         return {
             getSocket: function() {
@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function login() {
         var socket = dataList.getSocket();
-        socket.emit('query', { jsonrpc: '2.0', "method": "login", "params": {"login": "root", "password": "12345"}, "id": 1});
+        socket.emit("query", { jsonrpc: "2.0", "method": "login", "params": {"login": "root", "password": "12345"}, "id": 1});
         queryResult();
     }
 
     function queryResult() {
         var socket = dataList.getSocket();
-        socket.on('queryResult', function (data) {
+        socket.on("queryResult", function (data) {
             console.log(data);
             switch (data.id) {
                 case 1:
@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function addEvents() {
-        var addForm = document.getElementById('addCustomer');
+        var addForm = document.getElementById("addCustomer");
         addForm.addEventListener("submit", function(e){
             e.preventDefault();
             var socket = dataList.getSocket();
-            socket.emit('query', { jsonrpc: '2.0', 'method': 'CRM.command.createOrganization', 'params': {
+            socket.emit("query", { jsonrpc: "2.0", "method": "CRM.command.createOrganization", "params": {
                 "organizationID": ((Math.random() * 1000000) + 1) + "",
                 "name": e.target[0].value,
                 "representativeAddress": {
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 "ownerRoleID": "8aabc854-5b6a-4c3c-8fd7-8ec8ee832dec"
             }
             });
-            var inputs = document.querySelectorAll("input[type='text']");
+            var inputs = document.querySelectorAll("input[type='text'']");
             for(var input in inputs) {
                 inputs[input].value = "";
             }

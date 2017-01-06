@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     var dataList = (function() {
-        var socket = io.connect('http://jobsandbox.greatcare.pl:8056?sessionID=sesja1');
+        var socket = io.connect("http://jobsandbox.greatcare.pl:8056?sessionID=sesja1");
         var list = [];
 
         return {
@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function login() {
         var socket = dataList.getSocket();
-        socket.emit('query', { jsonrpc: '2.0', "method": "login", "params": { "login": "root", "password": "12345" }, "id": 1});
+        socket.emit("query", { jsonrpc: "2.0", "method": "login", "params": { "login": "root", "password": "12345" }, "id": 1});
         queryResult();
     }
 
     function getCustomerDetails() {
         var socket = dataList.getSocket();
         var customerId = window.location.search.substr(1);
-        socket.emit('query', { jsonrpc: '2.0', "method": "CRM.query.getOrganization", "params": { "organizationID": customerId }, "id": 2});
+        socket.emit("query", { jsonrpc: "2.0", "method": "CRM.query.getOrganization", "params": { "organizationID": customerId }, "id": 2});
     }
 
     function showCustomerDetails(customer) {
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     function queryResult() {
         var socket = dataList.getSocket();
-        socket.on('queryResult', function (data) {
+        socket.on("queryResult", function (data) {
             console.log(data);
             switch (data.id) {
                 case 1:
